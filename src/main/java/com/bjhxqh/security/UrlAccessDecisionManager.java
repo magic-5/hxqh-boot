@@ -28,6 +28,7 @@ public class UrlAccessDecisionManager implements AccessDecisionManager {
                 || matchers("/static/imgs/**", request)
                 || matchers("/static/js/**", request)
                 || matchers("/static/css/**", request)
+                || matchers("/", request)
                 || matchers("/index", request)
                 || matchers("/index/**", request)
                 || matchers("/login", request)
