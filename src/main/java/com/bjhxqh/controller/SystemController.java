@@ -23,37 +23,37 @@ public class SystemController {
     SysResourceService resourceService;
 
     @RequestMapping("/")
-    String home() {
+    String defaultIndex() {
         return "redirect:index";
     }
 
     @RequestMapping(value = "/index")
-    ModelAndView home(Model model) {
+    ModelAndView index() {
+        ModelAndView result = new ModelAndView("system/index");
         Msg msg =  new Msg("测试标题","测试内容","欢迎来到HOME页面,您拥有 ROLE_HOME 权限");
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication() .getPrincipal();
         String account = userDetails.getUsername();
         System.out.println("account:"+account);
         List<MenuDto> menuList = resourceService.getMenuByAccount(account);
-        model.addAttribute("msg", msg);
-        model.addAttribute("List", menuList);
-        ModelAndView result = new ModelAndView("system/index");
+        result.addObject("msg", msg);
+        result.addObject("List", menuList);
         return result;
     }
 
     @RequestMapping(value = "/index/content")
-    ModelAndView main(Model model) {
+    ModelAndView main() {
         ModelAndView result = new ModelAndView("system/content");
         return result;
     }
 
     @RequestMapping(value = "/index/portal")
-    ModelAndView portal(Model model) {
+    ModelAndView portal() {
         ModelAndView result = new ModelAndView("system/portal");
         return result;
     }
 
     @RequestMapping(value = "/login")
-    ModelAndView login(Model model) {
+    ModelAndView login() {
         ModelAndView result = new ModelAndView("system/login");
         return result;
     }
