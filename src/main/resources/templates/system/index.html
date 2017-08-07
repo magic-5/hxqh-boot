@@ -90,11 +90,12 @@
         <div class="ui-dialog-text">
             <p class="dialog-content">你确定要退出系统？</p>
             <p class="tips">如果是请点击“确定”，否则点“取消”</p>
-
-            <div class="buttons">
-                <input type="button" class="button long2 ok" value="确定" />
-                <input type="button" class="button long2 normal" value="取消" />
-            </div>
+            <form th:action="@{/logout}" id="logout">
+                <div class="buttons">
+                    <input type="submit" class="button long2 ok" value="确定" />
+                    <input type="button" class="button long2 normal" value="取消" />
+                </div>
+            </form>
         </div>
 
     </div>

@@ -36,25 +36,25 @@ public class SystemController {
         List<MenuDto> menuList = resourceService.getMenuByAccount(account);
         model.addAttribute("msg", msg);
         model.addAttribute("List", menuList);
-        ModelAndView result = new ModelAndView("index");
+        ModelAndView result = new ModelAndView("system/index");
         return result;
     }
 
     @RequestMapping(value = "/index/content")
     ModelAndView main(Model model) {
-        ModelAndView result = new ModelAndView("content");
+        ModelAndView result = new ModelAndView("system/content");
         return result;
     }
 
     @RequestMapping(value = "/index/portal")
     ModelAndView portal(Model model) {
-        ModelAndView result = new ModelAndView("portal");
+        ModelAndView result = new ModelAndView("system/portal");
         return result;
     }
 
     @RequestMapping(value = "/login")
     ModelAndView login(Model model) {
-        ModelAndView result = new ModelAndView("login/login");
+        ModelAndView result = new ModelAndView("system/login");
         return result;
     }
 }
