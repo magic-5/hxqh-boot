@@ -11,9 +11,9 @@ import java.security.MessageDigest;
  */
 public class MD5Util {
 
-    private static final String SALT = "yy";
+    private static final String SALT = "hx";
    
-    private static final String WECAHT_SALT="yy_aa";
+    private static final String WECHAT_SALT="hx_wechat";
     
     public static String encode(String password) {
         password = password + SALT;
@@ -24,7 +24,7 @@ public class MD5Util {
      * 与微信模块约定的加密模块
      * */
     public static String wechatEncode(String password){
-    	password = password + WECAHT_SALT;
+    	password = password + WECHAT_SALT;
         return processEncode(password);
     }
     
