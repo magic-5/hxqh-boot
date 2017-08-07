@@ -35,7 +35,7 @@ public class UrlUserService implements UserDetailsService { //自定义UserDetai
             List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
             for (SysResource resource : resources) {
                 if (resource != null && resource.getName() != null) {
-                    GrantedAuthority grantedAuthority = new UrlGrantedAuthority(resource.getUrl(), resource.getMethod());
+                    GrantedAuthority grantedAuthority = new UrlGrantedAuthority(resource.getUrl()+"/**", resource.getMethod());
                     grantedAuthorities.add(grantedAuthority);
                 }
             }
