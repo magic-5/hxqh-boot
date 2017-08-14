@@ -20,4 +20,10 @@
     <result column="qq" property="qq" jdbcType="VARCHAR" />
     <result column="accountid" property="accountid" jdbcType="INTEGER" />
   </resultMap>
+  <select id="findUserbyAccount" parameterType="String" resultType="com.bjhxqh.model.po.SysUser">
+    SELECT su.*
+    FROM sys_account sa
+    JOIN sys_user su ON sa.id = su.accountid
+    WHERE sa.account=#{account}
+  </select>
 </mapper>

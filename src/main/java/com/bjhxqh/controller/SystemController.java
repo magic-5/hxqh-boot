@@ -3,7 +3,9 @@ package com.bjhxqh.controller;
 import com.bjhxqh.model.dto.MenuDto;
 import com.bjhxqh.model.po.Msg;
 import com.bjhxqh.model.po.SysResource;
+import com.bjhxqh.model.po.SysUser;
 import com.bjhxqh.service.SysResourceService;
+import com.bjhxqh.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,6 +25,8 @@ public class SystemController {
 
     @Autowired
     SysResourceService resourceService;
+    @Autowired
+    SysUserService userService;
 
     @RequestMapping("/")
     String defaultIndex() {
@@ -36,7 +40,9 @@ public class SystemController {
         String account = userDetails.getUsername();
         System.out.println("account:"+account);
         List<SysResource> parentResourcesList = resourceService.getParentResources(account);
+        SysUser sysUser = userService.getUserByAccount(account);
         result.addObject("parentList", parentResourcesList);
+        result.addObject("sysUser", sysUser);
         return result;
     }
 
