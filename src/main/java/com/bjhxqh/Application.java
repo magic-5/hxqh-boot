@@ -31,7 +31,8 @@ import javax.sql.DataSource;
 				"com.bjhxqh.security",
 				"com.bjhxqh.controller",
 				"com.bjhxqh.service",
-				"com.bjhxqh.model"
+				"com.bjhxqh.model",
+				"com.bjhxqh.common.util"
 				})
 public class Application {
 

@@ -16,20 +16,26 @@ import java.util.List;
 @Service
 public class SysResourceServiceImpl extends ServiceSupport<SysResource> implements SysResourceService {
 
-    public List<MenuDto> getMenuByAccount(String account){
+    public List<SysResource> getParentResources(String account){
+        SysResourceMapper srmap = (SysResourceMapper)getMapper();
+        return srmap.findParentResource(account);
+    }
+
+    public List<MenuDto> getMenuByAccountAndParentId(String account,int parent,String parentName){
         ArrayList<MenuDto> arr = new ArrayList<MenuDto>();
         SysResourceMapper srmap = (SysResourceMapper)getMapper();
-        ArrayList<SysResource> al = srmap.findParentMenu();
-        ArrayList<SysResource> resourceList = srmap.findResourceByUserId(account);
+        ArrayList<SysResource> al = srmap.findSecondaryMenuByUserAndParentId(account,parent);
+        ArrayList<SysResource> resourceList = srmap.findResourceByUserAndParentId(account,parent);
         for(int i=0;i<al.size();i++){
             int parentId = al.get(i).getId();
             String menuName = al.get(i).getName();
             MenuDto menudto = new MenuDto();
             menudto.setName(menuName);
+            //menudto.setParentName(parentName);
             for(int j=0;j<resourceList.size();j++){
                 SysResource sysResource = resourceList.get(j);
-                int parent = sysResource.getParent();
-                if(parent!=0&&parent==parentId){
+                int parentValue = sysResource.getParent();
+                if(parentValue!=0&&parentValue==parentId){
                     menudto.addMenu(sysResource);
                 }
             }

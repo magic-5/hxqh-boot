@@ -12,5 +12,6 @@ import java.util.List;
  */
 @Service
 public interface SysResourceService extends IService<SysResource> {
-    public List<MenuDto> getMenuByAccount(String account);
+    public List<MenuDto> getMenuByAccountAndParentId(String account,int parent,String parentName);
+    public List<SysResource> getParentResources(String account);
 }

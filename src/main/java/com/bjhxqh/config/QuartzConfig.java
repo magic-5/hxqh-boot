@@ -30,7 +30,7 @@ public class QuartzConfig {
     private String dataSourcePassword;
 
     @Bean
-    public SchedulerFactoryBean schedulerFactoryBean(DataSource dataSource) throws IOException {
+    public SchedulerFactoryBean schedulerFactoryBean() throws IOException {
         SchedulerFactoryBean factory = new SchedulerFactoryBean();
         factory.setQuartzProperties(quartzProperties());
         return factory;
@@ -59,6 +59,7 @@ public class QuartzConfig {
         prop.put("org.quartz.dataSource.quartzDataSource.URL", dataSourceURL);
         prop.put("org.quartz.dataSource.quartzDataSource.user", dataSourceUsername);
         prop.put("org.quartz.dataSource.quartzDataSource.password", dataSourcePassword);
+        prop.put("org.quartz.dataSource.quartzDataSource.connectionProvider.class", "com.bjhxqh.common.util.DruidConnectionProvider");
         return prop;
     }
 
