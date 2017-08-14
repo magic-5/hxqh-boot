@@ -26,8 +26,8 @@
                         <i class="nav-ivon"></i>
                         <span class="nav-text" th:text="${slist.name}"></span>
                     </a>
-                    <ul class="subnav" th:each="mlist : ${slist.menuList}">
-                        <li class="subnav-li" th:href="${mlist.url}" th:attr="data-id=${mlist.id}">
+                    <ul class="subnav">
+                        <li class="subnav-li" th:each="mlist : ${slist.menuList}" th:href="${mlist.url}" th:attr="data-id=${mlist.id}">
                             <a href="javascript:;" class="ue-clear">
                                 <i class="subnav-icon"></i>
                                 <span class="subnav-text" th:text="${mlist.name}"></span>
