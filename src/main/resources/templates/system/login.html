@@ -18,7 +18,7 @@
                 <h1></h1>
                 <form th:action="@{/login}" action="/login" method="POST" >
                     <div class="input username" id="username">
-                        <label for="userName">用户名</label>
+                        <label for="userName" th:text="#{username}"></label>
                         <span></span>
                         <input type="text" id="username" name="username" />
                     </div>
