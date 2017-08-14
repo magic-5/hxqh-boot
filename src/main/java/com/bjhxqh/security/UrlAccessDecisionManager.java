@@ -34,6 +34,9 @@ public class UrlAccessDecisionManager implements AccessDecisionManager {
                 || matchers("/login", request)
                 || matchers("/logout", request)
                 || matchers("/druid/**", request)
+                || matchers("/service/**", request)
+                || matchers("/activiti/**", request)
+                || matchers("/static/activiti/**", request)
                 || matchers("/favicon.ico", request)) {
             return;
         } else {
