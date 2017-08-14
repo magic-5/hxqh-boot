@@ -17,6 +17,6 @@ public class SysUserServiceImpl extends ServiceSupport<SysUser> implements SysUs
 
     public SysUser getUserByAccount(String account){
         SysUserMapper sumap = (SysUserMapper)getMapper();
-        return sumap.findUserbyAccount(account).get(0);
+        return sumap.findUserbyAccount(account);
     }
 }

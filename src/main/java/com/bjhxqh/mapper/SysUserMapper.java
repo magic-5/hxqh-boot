@@ -7,5 +7,5 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface SysUserMapper extends MyMapper<SysUser> {
-    List<SysUser> findUserbyAccount(String account);
+    SysUser findUserbyAccount(String account);
 }
