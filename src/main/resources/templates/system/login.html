@@ -18,12 +18,12 @@
                 <h1></h1>
                 <form th:action="@{/login}" action="/login" method="POST" >
                     <div class="input username" id="username">
-                        <label for="userName" th:text="#{username}"></label>
+                        <label for="userName" th:text="#{username}">用户名</label>
                         <span></span>
                         <input type="text" id="username" name="username" />
                     </div>
                     <div class="input psw" id="password">
-                        <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                        <label for="password" th:text="#{password}">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
                         <span></span>
                         <input type="password" id="password" name="password" />
                     </div>
