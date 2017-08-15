@@ -3,7 +3,7 @@
 .ui-table ::-webkit-scrollbar-button{display:none;}
 
 /*表格操作条样式 */
-.ui-table-optBar{z-index:2;overflow:hidden;position:relative;top:4px;float:left;width:100%;padding-bottom:7px;background:url(img/hr.png) repeat-x left bottom;}
+.ui-table-optBar{z-index:2;overflow:hidden;position:relative;top:4px;float:left;width:100%;padding-bottom:7px;background:url(../imgs/hr.png) repeat-x left bottom;}
 .ui-table-optBar button{float:left;margin-right:8px;}
 /*** 表格设置按钮 ***/
 .ui-table-optBar .ui-table-setting{float:right;margin-right:-8px;}
@@ -14,9 +14,9 @@
 .ui-table-panel{overflow:hidden;z-index:1;position:relative;width:100%;margin-bottom:3px;padding-bottom:1px;}
 
 /*** 表格主要区域内容样式 - 表格头 ***/
-.ui-table-thead{position:relative;height:39px;/*border:1px solid #E1E6EA;*/border-right:0;border-left:0;/*background:#EDF4F9;*/ background:url(../img/skin_/thbg.png);}
+.ui-table-thead{position:relative;height:39px;/*border:1px solid #E1E6EA;*/border-right:0;border-left:0;/*background:#EDF4F9;*/ background:url(../imgs/skin_/thbg.png);}
 .ui-table-main{z-index:3;position:absolute;left:0;top:0;right:0;overflow:hidden;}
-.ui-table th{height:40px;padding-left:5px;border-left:1px solid #D4DFE7;border-right:0;/*background:#EDF4F9;*/ background:url(../img/skin_/thbg.png);}
+.ui-table th{height:40px;padding-left:5px;border-left:1px solid #D4DFE7;border-right:0;/*background:#EDF4F9;*/ background:url(../imgs/skin_/thbg.png);}
 .ui-table th:first-child{border-left:0;}
 /* 表格头部名 */
 .ui-table-th{position:relative;padding-right:25px;}
@@ -90,14 +90,14 @@
 
 /*表格无数据 、加载中*/
 .ui-table-tbody .ui-nodata-tip{position:absolute;top:50px;left:50%;margin:35px 0 0 -130px;width:6em;}
-.ui-table-loading{position:absolute;top:60px;left:50%;height:64px;margin:35px 0 0 -130px;padding-left:74px;line-height:64px;font-size:24px;color:#C7C7C7;background:url(img/table/loading.gif) no-repeat left center;}
+.ui-table-loading{position:absolute;top:60px;left:50%;height:64px;margin:35px 0 0 -130px;padding-left:74px;line-height:64px;font-size:24px;color:#C7C7C7;background:url(../imgs/skin_/loading.gif) no-repeat left center;}
 
 
 
 /*头部阴影*/
-.ui-table-thead-shadow{position:absolute;left:0;right:0; bottom:0; height:3px; background:url(../img/skin_/thbtm.png);z-index:10;}
+.ui-table-thead-shadow{position:absolute;left:0;right:0; bottom:0; height:3px; background:url(../imgs/skin_/thbtm.png);z-index:10;}
 
-.ui-icon2{display:inline-block;width:16px;height:16px;background-image:url(../img/skin_/uew_icon2.png);}
+.ui-icon2{display:inline-block;width:16px;height:16px;background-image:url(../imgs/skin_/uew_icon2.png);}
 
 .ui-icon2-sort{background-position:-16px 0;}
 .ui-icon2-sort-asc{background-position:-32px 0;}
