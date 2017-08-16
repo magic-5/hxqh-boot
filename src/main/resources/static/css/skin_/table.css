@@ -32,7 +32,7 @@ html{*overflow:auto;}
 
 .table .opt .sortarea{float:right;margin-right:10px;line-height:40px;}
 .table .opt .sortarea .sort {margin-right:15px;}
-.table .opt .sortarea .sort .icon{*position:relative;*top:-4px;margin-right:3px;display:inline-block;width:10px;height:9px; background:url(../../img/skin_/px.png);}
+.table .opt .sortarea .sort .icon{*position:relative;*top:-4px;margin-right:3px;display:inline-block;width:10px;height:9px; background:url(../../imgs/skin_/px.png);}
 .table .opt .sortarea .sort .text{color:#38a3d5;}
 .table .opt .sortarea .list,.opt .sortarea .card{position:relative;top:2px;*top:-2px;display:inline-block;width:15px;height:13px; cursor:pointer;margin-right:10px;} 
 .table .opt .sortarea .list{ background:url(../../imgs/skin_/icon1.png);}

@@ -35,7 +35,9 @@
 
 /*** 表格主要区域内容样式 - 表格主体 ***/
 .ui-table-tbody{position:relative;overflow-y:auto;overflow-x:hidden;}
-.ui-table-tbody td{height:21px;padding:10px 10px 6px 6px;word-wrap:break-word;word-break:break-all;overflow:hidden;border-left:1px dotted #bfbfbf;/*border-bottom:1px solid #e6e6e6;*/background:#fff;}
+.ui-table-tbody td{
+    /*height:19px;*/
+    padding:10px 10px 6px 6px;word-wrap:break-word;word-break:break-all;overflow:hidden;border-left:1px dotted #bfbfbf;/*border-bottom:1px solid #e6e6e6;*/background:#fff;}
 .ui-table-tbody table{margin-top:-39px;*margin-top:-39px;}
 .ui-table-tbody table tr.even{background:#FCFCFC;}
 
@@ -52,7 +54,9 @@
 /***** CHECKBOX冻结 *****/
 .ui-table-fixed-checkbox .table-front-fixed{z-index:2;position:absolute;left:0;top:0;width:52px;overflow:hidden;}
 .ui-table-fixed-checkbox .ui-table-thead .table-front-fixed{border-right:1px solid #E1E6EA;}
-.ui-table-fixed-checkbox .ui-table-checkbox{width:47px;padding-right:0;}
+.ui-table-fixed-checkbox .ui-table-checkbox{
+    width:47px;
+    padding-right:0;}
 .ui-table-fixed-checkbox .ui-table-main{left:53px;}
 /*** 表格主体部分 ***/
 .ui-table-fixed-checkbox .ui-table-tbody .table-front-fixed{/*border-right:1px solid #F3F3F3;*/background:#fff;}
@@ -66,9 +70,14 @@
 
 /***** 操作列冻结 *****/
 .ui-table-fixed-opt .ui-table-thead .table-finale-fixed{z-index:2;position:absolute;right:0;top:0;border-left:1px solid #E1E6EA;}
-.ui-table-fixed-opt .ui-table-operation{width:47px;padding-right:0;}
-.ui-table-fixed-opt .ui-table-operation>a{margin-left:8px;}
-.ui-table-fixed-opt .ui-table-operation>a:first-child{margin-left:0px;}
+.ui-table-fixed-opt .ui-table-operation{
+    width:47px;
+    padding-right:0;}
+.ui-table-fixed-opt .ui-table-operation>a{
+    display: inline-block;
+    height: 19px;
+    margin-left:8px;}
+.ui-table-fixed-opt .ui-table-operation>a:first-child{margin-left:0;}
 .ui-table-fixed-opt .ui-table-operation .ui-table-thTitle{padding-right:0;}
 .ui-table-fixed-opt .ui-table-thead .ui-table-main,.ui-table-fixed-opt .ui-table-tbody .ui-table-main{right:53px;}
 /*** 表格主体部分 ***/
@@ -86,7 +95,9 @@
 
 
 /***** 不换行的列 *****/
-.ui-table-nowrap.ui-table .ui-table-td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ui-table-nowrap.ui-table .ui-table-td{
+    height: 19px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 /*表格无数据 、加载中*/
 .ui-table-tbody .ui-nodata-tip{position:absolute;top:50px;left:50%;margin:35px 0 0 -130px;width:6em;}
