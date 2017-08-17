@@ -1,4 +1,4 @@
-package com.bjhxqh.activiti.modeler;
+package com.bjhxqh.common.activiti.modeler;
 
 
 import org.slf4j.Logger;

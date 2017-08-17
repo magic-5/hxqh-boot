@@ -1,4 +1,4 @@
-package com.bjhxqh.activiti.rest.controller;
+package com.bjhxqh.common.activiti.rest.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,7 +9,6 @@ import org.activiti.editor.constants.ModelDataJsonConstants;
 import org.activiti.editor.language.json.converter.BpmnJsonConverter;
 import org.activiti.engine.ProcessEngine;
 import org.activiti.engine.RepositoryService;
-import org.activiti.engine.impl.ProcessEngineImpl;
 import org.activiti.engine.repository.Deployment;
 import org.activiti.engine.repository.Model;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
-import org.activiti.rest.diagram.services.ProcessInstanceHighlightsResource;
 
 /**
  * 懒得写，直接参照了：http://www.jianshu.com/p/cf766a713a86

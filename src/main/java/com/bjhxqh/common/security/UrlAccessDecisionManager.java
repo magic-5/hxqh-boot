@@ -1,4 +1,4 @@
-package com.bjhxqh.security;
+package com.bjhxqh.common.security;
 
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;

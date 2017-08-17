@@ -1,6 +1,5 @@
 package com.bjhxqh;
 
-import com.bjhxqh.activiti.modeler.JsonpCallbackFilter;
 import org.activiti.engine.*;
 import org.activiti.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import org.activiti.spring.ProcessEngineFactoryBean;
@@ -25,13 +24,13 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 @MapperScan(basePackages = "com.bjhxqh.mapper")
 @ComponentScan({
-				"org.activiti.rest.diagram",
-				"com.bjhxqh.activiti",
 				"com.bjhxqh.config",
-				"com.bjhxqh.security",
 				"com.bjhxqh.controller",
 				"com.bjhxqh.service",
 				"com.bjhxqh.model",
+				"com.bjhxqh.common.security",
+				"com.bjhxqh.common.activiti",
+				"org.activiti.rest.diagram",
 				"com.bjhxqh.common.util"
 				})
 public class Application {

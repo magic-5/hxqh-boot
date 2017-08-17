@@ -1,7 +1,7 @@
 package com.bjhxqh.config;
 
+import com.bjhxqh.common.security.UrlUserService;
 import com.bjhxqh.common.util.MD5Util;
-import com.bjhxqh.security.UrlUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.bjhxqh.security;
+package com.bjhxqh.common.security;
 
 import com.bjhxqh.mapper.SysAccountMapper;
 import com.bjhxqh.mapper.SysResourceMapper;
