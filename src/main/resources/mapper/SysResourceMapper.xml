@@ -25,7 +25,8 @@
     LEFT JOIN sys_authgroup sau ON sau.id = sra.groupid
     LEFT JOIN sys_authgroup_resource saur ON saur.groupid = sau.id
     LEFT JOIN sys_resource sres ON sres.id = saur.resourceid
-    WHERE sa.account=#{account} and sres.parent!='' and sres.parent is not NULL
+    WHERE sa.account=#{account} and sres.url!='' and sres.url is not NULL and sres.method!='' and sres.method is not NULL
+    AND sres.parent!='' and sres.parent is not NULL
     ORDER BY sres.menuorder
   </select>
   <select id="findParentResource" parameterType="String" resultType="com.bjhxqh.model.po.SysResource">
