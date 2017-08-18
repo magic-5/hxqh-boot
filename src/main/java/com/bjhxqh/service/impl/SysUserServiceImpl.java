@@ -25,7 +25,7 @@ public class SysUserServiceImpl extends ServiceSupport<SysUser> implements SysUs
     }
 
     @Override
-    public List<SysUser> selectByUser(SysUser user, int page, int rows) {
+    public List<SysUser> selectByUser(SysUser user) {
         Example example = new Example(SysUser.class);
         Example.Criteria criteria = example.createCriteria();
         if (StringUtil.isNotEmpty(user.getNumber())) {
@@ -38,7 +38,7 @@ public class SysUserServiceImpl extends ServiceSupport<SysUser> implements SysUs
             criteria.andEqualTo("id", user.getId());
         }
         //分页查询
-        PageHelper.startPage(page, rows);
+        PageHelper.startPage(user.getPage(), user.getRows());
         return selectByExample(example);
     }
 }

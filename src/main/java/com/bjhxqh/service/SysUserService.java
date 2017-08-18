@@ -25,9 +25,7 @@ public interface SysUserService extends IService<SysUser> {
      * 根据条件分页查询
      *
      * @param user
-     * @param page
-     * @param rows
      * @return
      */
-    List<SysUser> selectByUser(SysUser user, int page, int rows);
+    List<SysUser> selectByUser(SysUser user);
 }

@@ -1,9 +1,7 @@
 package com.bjhxqh.controller;
 
 import com.bjhxqh.model.po.SysUser;
-import com.bjhxqh.model.po.UserInfo;
 import com.bjhxqh.service.SysUserService;
-import com.bjhxqh.service.UserInfoService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -28,15 +25,13 @@ public class UserController {
     private String redirect_list = "redirect:list";
 
     @RequestMapping(value = {"list", ""})
-    public ModelAndView getList(SysUser user,
-                                @RequestParam(required = false, defaultValue = "1") int page,
-                                @RequestParam(required = false, defaultValue = "10") int rows) {
+    public ModelAndView getList(SysUser user) {
         ModelAndView result = new ModelAndView(page_list);
-        List<SysUser> userList = userService.selectByUser(user, page, rows);
+        List<SysUser> userList = userService.selectByUser(user);
         result.addObject("pageInfo", new PageInfo<SysUser>(userList));
         result.addObject("queryParam", user);
-        result.addObject("page", page);
-        result.addObject("rows", rows);
+        result.addObject("page", user.getPage());
+        result.addObject("rows", user.getRows());
         return result;
     }
 
