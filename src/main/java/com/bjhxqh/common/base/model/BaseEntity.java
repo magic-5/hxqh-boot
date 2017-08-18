@@ -29,10 +29,10 @@ import javax.persistence.*;
 /**
  * 基础信息
  *
- * @author liuzh
- * @since 2016-01-31 21:42
+ * @author fuyg
  */
 public class BaseEntity {
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
