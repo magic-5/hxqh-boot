@@ -1,12 +1,11 @@
 package com.bjhxqh.model.po;
 
+import com.bjhxqh.common.base.model.BaseEntity;
+
 import javax.persistence.*;
 
 @Table(name = "sys_resource")
-public class SysResource {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class SysResource extends BaseEntity {
 
     private String name;
 
@@ -23,20 +22,6 @@ public class SysResource {
     private String menuclass;
 
     private Integer parent;
-
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * @return name

@@ -1,13 +1,11 @@
 package com.bjhxqh.model.po;
 
+import com.bjhxqh.common.base.model.BaseEntity;
+
 import javax.persistence.*;
 
 @Table(name = "user_info")
-public class UserInfo {
-    @Id
-    @Column(name = "Id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class UserInfo extends BaseEntity {
 
     /**
      * 用户名
@@ -45,20 +43,6 @@ public class UserInfo {
      * 联系电话
      */
     private String tel;
-
-    /**
-     * @return Id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * 获取用户名

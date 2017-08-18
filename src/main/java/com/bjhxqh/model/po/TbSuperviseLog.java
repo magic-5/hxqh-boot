@@ -1,13 +1,12 @@
 package com.bjhxqh.model.po;
 
+import com.bjhxqh.common.base.model.BaseEntity;
+
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "tb_supervise_log")
-public class TbSuperviseLog {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class TbSuperviseLog extends BaseEntity {
 
     private String projectnum;
 
@@ -22,20 +21,6 @@ public class TbSuperviseLog {
     private String constructionnote;
 
     private String jobcontent;
-
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * @return projectnum

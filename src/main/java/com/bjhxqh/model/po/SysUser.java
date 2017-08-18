@@ -1,13 +1,12 @@
 package com.bjhxqh.model.po;
 
+import com.bjhxqh.common.base.model.BaseEntity;
+
 import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "sys_user")
-public class SysUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class SysUser extends BaseEntity {
 
     private Integer departmentid;
 
@@ -36,20 +35,6 @@ public class SysUser {
     private String qq;
 
     private Integer accountid;
-
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * @param number

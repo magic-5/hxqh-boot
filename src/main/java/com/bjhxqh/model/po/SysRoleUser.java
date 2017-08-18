@@ -1,30 +1,15 @@
 package com.bjhxqh.model.po;
 
+import com.bjhxqh.common.base.model.BaseEntity;
+
 import javax.persistence.*;
 
 @Table(name = "sys_role_user")
-public class SysRoleUser {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class SysRoleUser extends BaseEntity {
 
     private Integer roleid;
 
     private Integer userid;
-
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * @return roleid

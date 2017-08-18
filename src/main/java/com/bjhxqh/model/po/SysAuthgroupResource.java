@@ -1,30 +1,15 @@
 package com.bjhxqh.model.po;
 
+import com.bjhxqh.common.base.model.BaseEntity;
+
 import javax.persistence.*;
 
 @Table(name = "sys_authgroup_resource")
-public class SysAuthgroupResource {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class SysAuthgroupResource extends BaseEntity {
 
     private Integer groupid;
 
     private Integer resourceid;
-
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * @return groupid
