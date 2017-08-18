@@ -25,14 +25,15 @@
                         password="${spring.datasource.password}">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="com.bjhxqh.model.po" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.bjhxqh.model.po" targetProject="src/main/java">
+            <property name="rootClass" value="com.bjhxqh.common.base.model.BaseEntity" />
+        </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
         <javaClientGenerator targetPackage="com.bjhxqh.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
         <!--<table tableName="userinfo"/>-->
-        <table tableName="%" >
-            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        <table tableName="user_info" >
         </table>
     </context>
 </generatorConfiguration>
