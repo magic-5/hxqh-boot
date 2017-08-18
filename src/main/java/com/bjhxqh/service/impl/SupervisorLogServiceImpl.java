@@ -23,12 +23,12 @@ public class SupervisorLogServiceImpl extends ServiceSupport<TbSuperviseLog> imp
     public List<TbSuperviseLog> selectByLog(TbSuperviseLog tslog, int page, int rows) {
         Example example = new Example(TbSuperviseLog.class);
         Example.Criteria criteria = example.createCriteria();
-//        if (StringUtil.isNotEmpty(superviseLog.getCountryname())) {
-//            criteria.andLike("countryname", "%" + superviseLog.getCountryname() + "%");
-//        }
-//        if (StringUtil.isNotEmpty(superviseLog.getCountrycode())) {
-//            criteria.andLike("countrycode", "%" + superviseLog.getCountrycode() + "%");
-//        }
+        if (StringUtil.isNotEmpty(tslog.getProjectnum())) {
+            criteria.andLike("projectnum", "%" + tslog.getProjectnum() + "%");
+        }
+        if (StringUtil.isNotEmpty(tslog.getProjectname())) {
+            criteria.andLike("projectname", "%" + tslog.getProjectname() + "%");
+        }
         if (tslog.getId() != null) {
             criteria.andEqualTo("id", tslog.getId());
         }

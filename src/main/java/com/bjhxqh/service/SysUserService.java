@@ -13,5 +13,21 @@ import java.util.List;
  */
 @Service
 public interface SysUserService extends IService<SysUser> {
+    /**
+     * 根据帐号account查询sysuser
+     *
+     * @param account
+     * @return
+     */
     public SysUser getUserByAccount(String account);
+
+    /**
+     * 根据条件分页查询
+     *
+     * @param user
+     * @param page
+     * @param rows
+     * @return
+     */
+    List<SysUser> selectByUser(SysUser user, int page, int rows);
 }

@@ -11,6 +11,8 @@ public class SysUser {
 
     private Integer departmentid;
 
+    private String number;
+
     private String name;
 
     private String sex;
@@ -50,19 +52,15 @@ public class SysUser {
     }
 
     /**
-     * @return departmentid
+     * @param number
      */
-    public Integer getDepartmentid() {
-        return departmentid;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    /**
-     * @param departmentid
-     */
-    public void setDepartmentid(Integer departmentid) {
-        this.departmentid = departmentid;
+    public String getNumber() {
+        return number;
     }
-
     /**
      * @return name
      */
@@ -75,6 +73,20 @@ public class SysUser {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return departmentid
+     */
+    public Integer getDepartmentid() {
+        return departmentid;
+    }
+
+    /**
+     * @param departmentid
+     */
+    public void setDepartmentid(Integer departmentid) {
+        this.departmentid = departmentid;
     }
 
     /**

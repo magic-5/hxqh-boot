@@ -6,8 +6,9 @@
       WARNING - @mbg.generated
     -->
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="departmentid" property="departmentid" jdbcType="INTEGER" />
+    <result column="number" property="number" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="departmentid" property="departmentid" jdbcType="INTEGER" />
     <result column="sex" property="sex" jdbcType="VARCHAR" />
     <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
     <result column="hometown" property="hometown" jdbcType="VARCHAR" />
@@ -25,5 +26,19 @@
     FROM sys_account sa
     JOIN sys_user su ON sa.id = su.accountid
     WHERE sa.account=#{account}
+  </select>
+  <select id="selectBySysuserQueryModel" resultMap="BaseResultMap">
+    select id,number,name,sex,birthday,hometown,email,homephone,officephone,mobile,address,postcode,qq from sys_user
+    <where>
+      <if test="number != null and number != ''">
+        number like concat('%',concat(#{number}, '%'))
+      </if>
+      <if test="name != null and name != ''">
+        and name like concat('%',concat(#{name}, '%'))
+      </if>
+      <if test="id != null">
+        and id = #{id}
+      </if>
+    </where>
   </select>
 </mapper>
