@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="utf-8" />
+
+    <title>菜单列表</title>
+</head>
+<body>
+<div id="container">
+    <div id="hd"></div>
+    <div id="bd">
+        <div id="main">
+    <table frame="box" border="1" align="center"   cellpadding="0" cellspacing="0" bordercolor="black">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>菜单名称</td>
+            <td>菜单类型</td>
+            <td>菜单排序</td>
+            <td>   url  </td>
+            <td>  操作  </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="mulist,iterStat : ${allList}">
+            <td th:text="${mulist.id}">1</td>
+            <td th:text="${mulist.name}">系统管理</td>
+            <td th:text="${mulist.menutype}">app</td>
+            <td th:text="${mulist.menuorder}">1</td>
+            <td th:text="${mulist.url}">/user</td>
+            <td><a th:attr="data-id=${mulist.id}" th:href="'/menu/view?id='+${mulist.id}" >编辑</a></td>
+            <td><a th:attr="data-id=${mulist.id}" th:href="'/menu/delete?id='+${mulist.id}" >删除</a></td>
+        </tr>
+        <td><a href="/menu/view" target="main_iframe" data-id="11111111">新增</a></td>
+        </tbody>
+    </table>
+</div>
+    </div>
+</div>
+</body>
+
+
+</html>

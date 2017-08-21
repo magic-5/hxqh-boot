@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" th:href="@{/static/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/static/css/skin_/index.css}" />
+    <script type="text/javascript" th:src="@{/static/js/jquery/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/plugins/global.js}"></script>
+    <title>详情</title>
+</head>
+<body>
+<div id="container">
+    <form th:action="@{/menu/save}" method="post">
+        <p>菜单名称：<input type="text" name="name" th:value="${sysResource.name}" />
+            <input type="hidden" name="id" th:value="${sysResource.id}" />
+        </p>
+        <!--<p>菜单类型：<input type="text" name="menutype" th:value="${sysResource.menutype}" />-->
+        <!--</p>-->
+        <div class="form-group">
+
+            <label>菜单类型：</label> <select class="form-control" name="menutype">
+            <option>请选择菜单类型</option>
+                <option value="mainmenu" th:selected="${menutype=='mainmenu'}">mainmenu</option>
+                <option value="menu" th:selected="${menutype=='menu'}">menu</option>
+                <option value="app" th:selected="${menutype=='app'}">app</option>
+            </select>
+            </div>
+        <div class="form-group">
+
+            <label>菜单排序：</label> <select class="form-control" name="menuorder">
+            <option>请选择菜单排序</option>
+            <option value="1" th:selected="${menuorder=='1'}">1</option>
+            <option value="2" th:selected="${menuorder=='2'}">2</option>
+            <option value="3" th:selected="${menuorder=='3'}">3</option>
+        </select>
+        </div>
+        <div class="form-group">
+
+            <label>父级菜单：</label> <select class="form-control" name="id">
+            <option>请选择父级菜单</option>
+            <option th:each="menuList : ${parentResourcesList}" th:value="${parentResourcesList.id}" th:text="${parentResourcesList.name}"></option>
+
+        </select>
+        </div>
+        <td></td>
+        <td><input type="submit" value="保存" /></td>
+    </form>
+</div>
+</body>
+</html>
