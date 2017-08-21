@@ -5,7 +5,10 @@ import com.bjhxqh.mapper.SysResourceMapper;
 import com.bjhxqh.model.dto.MenuDto;
 import com.bjhxqh.model.po.SysResource;
 import com.bjhxqh.service.SysResourceService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.util.StringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +23,24 @@ public class SysResourceServiceImpl extends ServiceSupport<SysResource> implemen
         SysResourceMapper srmap = (SysResourceMapper)getMapper();
         return srmap.findParentResource(account);
     }
-
+    public List<SysResource> selectByResource(SysResource sysResource){
+        SysResourceMapper srmap = (SysResourceMapper)getMapper();
+        Example example = new Example(SysResource.class);
+        Example.Criteria criteria = example.createCriteria();
+        if (StringUtil.isNotEmpty(sysResource.getName())) {
+            criteria.andLike("name", "%" + sysResource.getName() + "%");
+        }
+        if (StringUtil.isNotEmpty(sysResource.getMenutype())) {
+            criteria.andLike("menutype", "%" + sysResource.getMenutype() + "%");
+        }
+        if (sysResource.getId() != null) {
+            criteria.andEqualTo("id", sysResource.getId());
+        }
+        //分页查询
+        PageHelper.startPage(sysResource.getPage(), sysResource.getRows());
+        return selectByExample(example);
+        //return srmap.findAllMenu();
+    }
     public List<MenuDto> getMenuByAccountAndParentId(String account,int parent,String parentName){
         ArrayList<MenuDto> arr = new ArrayList<MenuDto>();
         SysResourceMapper srmap = (SysResourceMapper)getMapper();

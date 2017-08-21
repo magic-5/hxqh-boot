@@ -12,4 +12,5 @@ public interface SysResourceMapper extends MyMapper<SysResource> {
     ArrayList<SysResource> findParentResource(String account);
     ArrayList<SysResource> findSecondaryMenuByUserAndParentId(@Param("account")String account, @Param("parent")int parent);
     ArrayList<SysResource> findResourceByUserAndParentId(@Param("account")String account, @Param("parent")int parent);
+    ArrayList<SysResource> findAllMenu();
 }
