@@ -20,7 +20,7 @@ import java.util.List;
 public class SupervisorLogServiceImpl extends ServiceSupport<TbSuperviseLog> implements SupervisorLogService {
 
     @Override
-    public List<TbSuperviseLog> selectByLog(TbSuperviseLog tslog, int page, int rows) {
+    public List<TbSuperviseLog> selectByLog(TbSuperviseLog tslog) {
         Example example = new Example(TbSuperviseLog.class);
         Example.Criteria criteria = example.createCriteria();
         if (StringUtil.isNotEmpty(tslog.getProjectnum())) {
@@ -33,7 +33,7 @@ public class SupervisorLogServiceImpl extends ServiceSupport<TbSuperviseLog> imp
             criteria.andEqualTo("id", tslog.getId());
         }
         //分页查询
-        PageHelper.startPage(page, rows);
+        PageHelper.startPage(tslog.getPage(), tslog.getRows());
         return selectByExample(example);
     }
 }

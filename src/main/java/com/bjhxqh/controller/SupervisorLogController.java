@@ -27,15 +27,13 @@ public class SupervisorLogController {
     private String redirect_list = "redirect:/superviselog/list";
 
     @RequestMapping(value = {"list", "table", "table.html", ""})
-    public ModelAndView getList(TbSuperviseLog tslog,
-                                @RequestParam(required = false, defaultValue = "1") int page,
-                                @RequestParam(required = false, defaultValue = "10") int rows) {
+    public ModelAndView getList(TbSuperviseLog tslog) {
         ModelAndView result = new ModelAndView(page_list);
-        List<TbSuperviseLog> logList = logService.selectByLog(tslog, page, rows);
+        List<TbSuperviseLog> logList = logService.selectByLog(tslog);
         result.addObject("pageInfo", new PageInfo<TbSuperviseLog>(logList));
         result.addObject("queryParam", tslog);
-        result.addObject("page", page);
-        result.addObject("rows", rows);
+        result.addObject("page", tslog.getPage());
+        result.addObject("rows", tslog.getRows());
         return result;
     }
 

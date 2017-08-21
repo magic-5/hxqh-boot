@@ -22,7 +22,7 @@ public class RoleController {
 
     private String page_list = "test";
 
-    private String redirect_list = "redirect:list";
+    private String redirect_list = "redirect:/role/list";
 
     @RequestMapping(value = {"list", ""})
     public ModelAndView getList(SysRole role) {

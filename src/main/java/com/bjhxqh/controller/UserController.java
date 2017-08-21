@@ -22,7 +22,7 @@ public class UserController {
 
     private String page_list = "test";
 
-    private String redirect_list = "redirect:list";
+    private String redirect_list = "redirect:/user/list";
 
     @RequestMapping(value = {"list", ""})
     public ModelAndView getList(SysUser user) {

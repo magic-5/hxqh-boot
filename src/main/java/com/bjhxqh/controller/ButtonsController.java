@@ -1,7 +1,9 @@
 package com.bjhxqh.controller;
 
 import com.bjhxqh.model.po.SysAuthgroup;
+import com.bjhxqh.model.po.SysButtons;
 import com.bjhxqh.service.SysAuthGroupService;
+import com.bjhxqh.service.SysButtonsService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,50 +17,50 @@ import java.util.List;
  * Created by Administrator on 2017-07-20.
  */
 @Controller
-@RequestMapping(value = "/authgroup")
-public class AuthGroupController {
+@RequestMapping(value = "/buttons")
+public class ButtonsController {
     @Autowired
-    private SysAuthGroupService authgroupService;
+    private SysButtonsService buttonsService;
 
     private String page_list = "test";
 
-    private String redirect_list = "redirect:/authgroup/list";
+    private String redirect_list = "redirect:/buttons/list";
 
     @RequestMapping(value = {"list", ""})
-    public ModelAndView getList(SysAuthgroup authgroup) {
+    public ModelAndView getList(SysButtons button) {
         ModelAndView result = new ModelAndView(page_list);
-        List<SysAuthgroup> authgroupList = authgroupService.selectByAuthGroup(authgroup);
-        result.addObject("pageInfo", new PageInfo<SysAuthgroup>(authgroupList));
-        result.addObject("queryParam", authgroup);
-        result.addObject("page", authgroup.getPage());
-        result.addObject("rows", authgroup.getRows());
+        List<SysButtons> buttonList = buttonsService.selectByButton(button);
+        result.addObject("pageInfo", new PageInfo<SysButtons>(buttonList));
+        result.addObject("queryParam", button);
+        result.addObject("page", button.getPage());
+        result.addObject("rows", button.getRows());
         return result;
     }
 
     @RequestMapping(value = "view", method = RequestMethod.GET)
-    public ModelAndView view(SysAuthgroup authgroup) {
+    public ModelAndView view(SysButtons button) {
         ModelAndView result = new ModelAndView();
-        if (authgroup.getId() != null) {
-            authgroup = authgroupService.selectByKey(authgroup.getId());
+        if (button.getId() != null) {
+            button = buttonsService.selectByKey(button.getId());
         }
-        result.addObject("country", authgroup);
+        result.addObject("country", button);
         return result;
     }
 
     @RequestMapping(value = "save", method = RequestMethod.POST)
-    public ModelAndView save(SysAuthgroup authgroup) {
+    public ModelAndView save(SysButtons button) {
         ModelAndView result = new ModelAndView(redirect_list);
-        if (authgroup.getId() != null) {
-            authgroupService.updateAll(authgroup);
+        if (button.getId() != null) {
+            buttonsService.updateAll(button);
         } else {
-            authgroupService.save(authgroup);
+            buttonsService.save(button);
         }
         return result;
     }
 
     @RequestMapping("delete")
     public String delete(Integer id) {
-        authgroupService.delete(id);
+        buttonsService.delete(id);
         return redirect_list;
     }
 }
