@@ -12,15 +12,4 @@
     <result column="type" jdbcType="VARCHAR" property="type" />
     <result column="btnorder" jdbcType="INTEGER" property="btnorder" />
   </resultMap>
-  <resultMap id="BaseResultMap" type="com.bjhxqh.model.po.SysButtons">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="event" jdbcType="VARCHAR" property="event" />
-    <result column="iconclass" jdbcType="VARCHAR" property="iconclass" />
-    <result column="type" jdbcType="VARCHAR" property="type" />
-    <result column="btnorder" jdbcType="INTEGER" property="btnorder" />
-  </resultMap>
 </mapper>
