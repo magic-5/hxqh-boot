@@ -35,7 +35,7 @@ public class SystemController {
 
     @RequestMapping(value = "/index")
     ModelAndView index() {
-        ModelAndView result = new ModelAndView("system/index");
+        ModelAndView result = new ModelAndView("system/index/index");
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String account = userDetails.getUsername();
         System.out.println("account:"+account);
@@ -48,7 +48,7 @@ public class SystemController {
 
     @RequestMapping(value = "/index/content")
     ModelAndView main(HttpServletRequest request) {
-        ModelAndView result = new ModelAndView("system/content");
+        ModelAndView result = new ModelAndView("system/index/content");
         String parentId=request.getParameter("id");
         String parentName=request.getParameter("name");
         System.out.println("parentId:"+parentId);
@@ -71,13 +71,13 @@ public class SystemController {
 
     @RequestMapping(value = "/index/portal")
     ModelAndView portal() {
-        ModelAndView result = new ModelAndView("system/portal");
+        ModelAndView result = new ModelAndView("system/portal/portal");
         return result;
     }
 
     @RequestMapping(value = "/login")
     ModelAndView login() {
-        ModelAndView result = new ModelAndView("system/login");
+        ModelAndView result = new ModelAndView("system/login/login");
         return result;
     }
 }
