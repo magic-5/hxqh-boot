@@ -192,28 +192,7 @@ AMapUI.load(['ui/geo/DistrictCluster', 'lib/$'], function (DistrictCluster, $) {
     window.DistrictCluster = DistrictCluster;
     initPage(DistrictCluster, $);
 });
-function a() {
-    layer.open({
-        type: 2,
-        title: '信息',
-        area: ['620px', '510px'],
-        shadeClose: false,
-        scrollbar: true,
-        content: 'file:///D:/项目/高德地图/open.html'
-    });
-}
 
-function b() {
-    layer.open({
-        type: 2,
-        title: '信息',
-        area: ['620px', '510px'],
-        shadeClose: false,
-        scrollbar: true,
-        content: 'file:///D:/项目/高德地图/open1.html'
-    });
-
-}
 var data = [{
     id: 'A',
     position: [89.8681640625, 40.9798980696],
